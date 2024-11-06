@@ -36,11 +36,7 @@ Amplify is built using a combination of frontend and backend technologies to del
 
 ---
 
-## 📁 Project Structure
-Amplify/ ├── amplifier_frontend/ │ ├── public/ │ ├── src/ │ │ ├── components/ │ │ ├── pages/ │ │ └── styles/ ├── amplifier_backend/ │ ├── config/ │ ├── controllers/ │ ├── models/ │ ├── routes/ └── README.md
 
-yaml
-Copy code
 
 ---
 
