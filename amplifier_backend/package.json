@@ -1,0 +1,11 @@
+{
+  "name": "amplifier_backend",
+  "version": "1.0.0",
+  "description": "This will contain Backend code for Amplifier Music Website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GUNADEEP",
+  "license": "ISC"
+}
