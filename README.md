@@ -76,12 +76,12 @@ npm start
 npm run dev
 Visit http://localhost:3000 in your browser to explore Amplify.
 
-🎨 UI Previews
+# 🎨 UI Previews
 The Amplify homepage with easy navigation and curated playlists.
 
 Search your favorite songs and explore recommendations.
 
-🤝 Contributing
+# 🤝 Contributing
 Contributions are welcome! To get started:
 
 Fork this repository.
@@ -90,11 +90,13 @@ Commit your changes.
 Push to your branch and open a pull request.
 Please see our Contributing Guidelines for more details.
 
-📄 License
+ # 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-📞 Contact
+# 📞 Contact
 For any inquiries or feedback, feel free to reach out!
 
-Developer: C S Deepak
+Developer: C S Deepak<br>
+Developer: CHENNUPATI Gunadeep
+7760043176
 Project Repository: GitHub
