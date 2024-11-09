@@ -1,9 +1,9 @@
 // 7th 
 const express = require("express");
 const router = express.Router();
-const User = require("./models/User");
+const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const {getToken} = require("./utils/helpers");
+const {getToken} = require("../utils/helpers");
 
 // this POST route will help to register a User.
 router.post("/register",async (req,res)=>{
