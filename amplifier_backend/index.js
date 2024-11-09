@@ -8,7 +8,7 @@ const mongoose=require("mongoose");
 const JwtStrategy = require('passport-jwt').Strategy,
     ExtractJwt = require('passport-jwt').ExtractJwt;
 const passport=require("passport");
-const User=require("C:\Users\csdee\OneDrive\Desktop\Amplify\Amplify\amplifier_backend\models\User.js")
+const User=require("../models/User")
 require("dotenv").config();
 const app = express();
 const port = 6010;
