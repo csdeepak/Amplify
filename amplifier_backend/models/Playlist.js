@@ -1,5 +1,5 @@
 //4
-const mongoose=reuire("mongoose");
+const mongoose=require("mongoose");
 
 // How to create a model.
 // 1- reuire mongoose.
