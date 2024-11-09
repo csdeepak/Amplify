@@ -25,7 +25,7 @@ const Playlist = new mongoose.Schema({
     songs:[
         {
         type: mongoose.Type.ObjectId,
-        ref :"song"//Song
+        ref :"song" ,//Song
         
     },
     ],
@@ -38,6 +38,6 @@ const Playlist = new mongoose.Schema({
     
 });
 
-const PlaylistModel = mongoose.model("Playlist",Playlist)
+const PlaylistModel = mongoose.model("Playlist",Playlist);
 
 module.exports = PlaylistModel;

@@ -21,10 +21,10 @@ const Song = new mongoose.Schema({
     artist :{
         type: mongoose.Type.ObjectId,
         ref: "user",
-    }
+    },
     
 });
 
-const SongModel = mongoose.model("Song",Song)
+const SongModel = mongoose.model("Song",Song);
 
 module.exports = SongModel;
