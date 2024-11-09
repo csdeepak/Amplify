@@ -29,3 +29,5 @@ router.post("/register",async (req,res)=>{
     delete userToReturn.password; // for security purpose we are not going to return hashed Password to the User, but we are going to store hashedPassword in DB.
     return res.status(200).json(userToReturn);
 });
+
+module.exports = router;

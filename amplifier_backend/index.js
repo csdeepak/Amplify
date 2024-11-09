@@ -8,10 +8,12 @@ const mongoose=require("mongoose");
 const JwtStrategy = require('passport-jwt').Strategy,
     ExtractJwt = require('passport-jwt').ExtractJwt;
 const passport=require("passport");
-const User=require("../models/User")
+const User=require("../models/User");
+const authRoutes=require("./routes/auth");
 require("dotenv").config();
 const app = express();
 const port = 6010;
+app.use(express.json()); 
 
 //connect mongodb to our node app
 //mongoose.connect() takes 2 arguments 1.db 
@@ -49,7 +51,12 @@ passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
 app.get("/",(req,res)=>{
     res.send("Hello World.");
 });
+
+app.use("/auth",authRoutes);
+
 // Now I want to tell Express that my Server will run on localhost:8000
 app.listen(port, () => {
     console.log("App is running on port " + port);
 });
+
+
