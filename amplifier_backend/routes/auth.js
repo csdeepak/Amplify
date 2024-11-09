@@ -1,16 +1,16 @@
 // 7th 
 const express = require("express");
 const router = express.Router();
-//const User = require("./model");
+const User = require("./models/User");
 const bcrypt = require("bcrypt");
-//const {getToken} = require("./utils/helpers");
+const {getToken} = require("./utils/helpers");
 
 // this POST route will help to register a User.
 router.post("/register",async (req,res)=>{
     const {email,password,firstName,lastName,username}=req.body;
 
     // Does a user with this email exists.If yes we throw an error.
-    const User =await User.findOne({email:email});
+    const user =await User.findOne({email:email});
     if (user){
         return res.status(403).json({error:"A User with email already exists"})
     }
