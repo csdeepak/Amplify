@@ -1,3 +1,5 @@
+//7
+
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
@@ -31,6 +33,7 @@ router.post("/register", async (req, res) => {
 
     return res.status(200).json(userToReturn);
 });
+// 9
 
 // This POST route will help the user login.
 router.post("/login", async (req, res) => {
