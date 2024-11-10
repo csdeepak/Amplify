@@ -63,5 +63,3 @@ app.use("/playlist",playlistRoutes);
 app.listen(port, () => {
     console.log("App is running on port " + port);
 });
-
-
