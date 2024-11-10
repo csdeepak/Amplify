@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport =require("passport");
 const Song=require("../models/Song");
-
+const User = require("../models/User");
 
 // session helps in maintaining the login 
 
@@ -20,11 +20,42 @@ router.post("/create", passport.authenticate("jwt",{session:false}),async(req,re
 
 });
 
-// get route to get all song that i ahve published
+// get route to get all song that i have published
 router.get("/get/mysongs",passport.authenticate("jwt",{session:false}),async(req, res)=>{
     const currentUser=req.user;
     const songs=await Song.find({artist: req.user._id});
     return res.status(200).json({data:songs});
+});
+
+// Get route to get all songs any artist has published.
+// I will send the artist id and I want to see all songs that artist has published.
+
+// 12th Video
+
+router.get("/get/artist",passport.authenticate("jwt",{session:false}), async(req,res)=>
+{
+   const {artistId} =req.body;
+   // if artist exists.
+   const artist = await User.find({_id:artistId});
+   if(!artist){
+    return res.status(301).json({err:"Artist Does Not Exists"});
+   }
+   const songs = await Song.find({artist:artistId});
+   return res.status(200).json({data:songs});
+}
+);
+
+// get route to get a single song by name.
+
+// 12th video
+
+router.get("/get/songname",passport.authenticate("jwt",{session:false}),async(req,res) => {
+    const {songName} =req.body;
+    
+
+    // song name must be exact and same then only it can fetch.
+    const songs = await Song.find({name:songName});
+    return res.status(200).json({data:songs});  
 });
 
 module.exports=router;
