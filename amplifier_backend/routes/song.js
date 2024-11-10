@@ -32,9 +32,9 @@ router.get("/get/mysongs",passport.authenticate("jwt",{session:false}),async(req
 
 // 12th Video
 
-router.get("/get/artist",passport.authenticate("jwt",{session:false}), async(req,res)=>
+router.get("/get/artist/:artistId",passport.authenticate("jwt",{session:false}), async(req,res)=>
 {
-   const {artistId} =req.body;
+   const {artistId} =req.params;
    // if artist exists.
    const artist = await User.find({_id:artistId});
    if(!artist){
@@ -49,8 +49,8 @@ router.get("/get/artist",passport.authenticate("jwt",{session:false}), async(req
 
 // 12th video
 
-router.get("/get/songname",passport.authenticate("jwt",{session:false}),async(req,res) => {
-    const {songName} =req.body;
+router.get("/get/songname/:songName",passport.authenticate("jwt",{session:false}),async(req,res) => {
+    const {songName} =req.params;
     
 
     // song name must be exact and same then only it can fetch.
