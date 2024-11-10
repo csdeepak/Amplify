@@ -56,7 +56,7 @@ app.get("/",(req,res)=>{
 });
 
 app.use("/auth",authRoutes);
-app.use("/create",songRoutes);
+app.use("/song",songRoutes);
 
 // Now I want to tell Express that my Server will run on localhost:8000
 app.listen(port, () => {
