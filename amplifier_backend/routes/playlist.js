@@ -22,7 +22,7 @@ if(!name||!thumbnail||!songs){
     };
 
     const playlist = await Playlist.create(playlistData);
-    return res.status(200).json(palylist);
+    return res.status(200).json(playlist);
 }
 );
 
