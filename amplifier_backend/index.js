@@ -36,20 +36,19 @@ mongoose.connect("mongodb+srv://CSDEEPAK:"+process.env.MONGO_PASSWORD+"@amplify.
 let  opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = 'thisKeyIsSupposedToBeSecret';
-passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
-    User.findOne({id: jwt_payload.sub}, function(err, user) {
-        //done(err, doesTheUserExist)
-        if (err) {
-            return done(err, false);
-        }
+passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
+    try {
+        const user = await User.findOne({ _id: jwt_payload.identifier });
         if (user) {
             return done(null, user);
         } else {
             return done(null, false);
-            // or you could create a new account
         }
-    });
+    } catch (err) {
+        return done(err, false);
+    }
 }));
+
 
 app.get("/",(req,res)=>{
     res.send("Hello World.");
