@@ -1,10 +1,12 @@
 
-import './App.css';
+import "./output.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import LoginComponent from "./routes/Login";
 
 
 function App() {
   return (
+    <div className="w-screen h-screen">
       <BrowserRouter>
       <Routes>
         {
@@ -12,13 +14,11 @@ function App() {
           that  we are starting  to define our routes inside this */
         }
           <Route path = "/" element={<HelloComponent/>}/>
-          <Route path = "/hi" element={<div>hi</div>}/>
-          <Route path = "/bye" element={<div>bye</div>}/>
-
-
-        
-      </Routes>
+          <Route path = "/login" element={<LoginComponent/>}/>
+        </Routes>
+      
       </BrowserRouter>
+    </div>  
 
   );
 }
