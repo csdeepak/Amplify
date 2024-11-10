@@ -1,7 +1,8 @@
-
+// 22nd for font-poppins.
 import "./output.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LoginComponent from "./routes/Login";
+import SignupComponent from "./routes/Signup";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         }
           <Route path = "/" element={<HelloComponent/>}/>
           <Route path = "/login" element={<LoginComponent/>}/>
+          <Route path ="/signup" element = {<SignupComponent/>}/>
         </Routes>
       
       </BrowserRouter>
