@@ -36,7 +36,11 @@ router.get("/get/artist/:artistId",passport.authenticate("jwt",{session:false}),
 {
    const {artistId} =req.params;
    // if artist exists.
-   const artist = await User.find({_id:artistId});
+   const artist = await User.findOne({_id:artistId});
+   console.log(artist);
+   //![] = false
+   //!null = true
+   //!undefined =true
    if(!artist){
     return res.status(301).json({err:"Artist Does Not Exists"});
    }

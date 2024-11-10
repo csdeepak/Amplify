@@ -71,8 +71,10 @@ router.post("/add/song",passport.authenticate("jwt",{session:false}),async(req,r
    if(!playlist){
         return res.status(304).json({err:"Playlist Does Not Exists"});
    }
+
+   //refer 16 here 
    //step 1: check if current user owns the playlist or is a collaborator
-   if(playlist.owner != currentUser._id && !playlist.collaborators.includes(currentUser._id)){
+   if(!playlist.owner.equals(currentUser._id) && !playlist.collaborators.includes(currentUser._id)){
     return res.status(400).json({err:"Not Allowed"});
    }
 
