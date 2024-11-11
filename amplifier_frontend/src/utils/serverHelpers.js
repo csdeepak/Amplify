@@ -11,4 +11,4 @@ export const makeUnauthenticatedPOSTRequest = async(route,body) => {
     });
     const formattedResponse = await response.json();
     return formattedResponse;
-};
+}; 
