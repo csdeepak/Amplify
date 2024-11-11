@@ -6,7 +6,7 @@ const TextInput =({label,placeholder,className})=>{
     <input 
     type="text"
      placeholder={placeholder}
-     className="p-3 border border-red-400 border-solid rounded placeholder-gray-800"
+     className="p-3 border border-gray-500 border-solid rounded placeholder-gray-800"
      id={label}
      />
      </div>

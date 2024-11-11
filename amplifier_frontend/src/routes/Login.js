@@ -14,8 +14,8 @@ const LoginComponent =()=>{
           </div> 
           <div className="inputRegion w-1/3 py-5 flex items-center justify-center flex-col">
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
-            <div className="font-bold mb-4">To Continue , Log in to Spotify.</div>
-            <TextInput label="Email address or username" placeholder="Email address or username" className="my-3"/>
+            <div className="font-bold mb-4">To Continue, Log In to Spotify.</div>
+            <TextInput label="Email Address or Username" placeholder="Email Address or Username" className="my-3"/>
             <PasswordInput label="Password" placeholder="Password"/>
             <div className="w-full flex items-center justify-end my-8">
             <button className="bg-green-500 font-semibold p-3 px-10 rounded-full">LOG IN</button> {/*keep 500 to see color if it is 400 unable to see*/}

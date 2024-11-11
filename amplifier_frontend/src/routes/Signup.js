@@ -15,9 +15,9 @@ const SignupComponent =()=>{
           <div className="inputRegion w-1/3 py-5 flex items-center justify-center flex-col">
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
             <div className="font-bold mb-4 text-2xl">Sign Up for Free to Start Listening.</div>
-            <TextInput label="Email address" placeholder="Enter Your Email" className="my-6"/>
-            <TextInput label="Confirm Email address" placeholder=" Enter Your Email Again" className="mb-6"/>
-            <PasswordInput label="create Password" placeholder="Enter a Strong Password here"/>
+            <TextInput label="Email Address" placeholder="Enter Your Email" className="my-6"/>
+            <TextInput label="Confirm Email Address" placeholder=" Enter Your Email Again" className="mb-6"/>
+            <PasswordInput label="Create Password" placeholder="Enter a Strong Password Here"/>
             <TextInput label="What Should We Call You?" placeholder=" Enter Your Profile Name" className="my-6"/>
             <div className="w-full flex items-center justify-center my-8">
             <button className="bg-green-500 font-semibold p-3 px-10 rounded-full">SIGN UP</button> {/*keep 500 to see color if it is 400 unable to see*/}
