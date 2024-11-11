@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import TextInput from "../components/shared/TextInput";
 import PasswordInput from '../components/shared/PasswordInput';
 import {Link} from 'react-router-dom';
-
+{/* every time u make  changes in  tailwind.config.js run this commnad npx tailwindcss@2 build src/index.css -c tailwind.config.js -o src/output.css  and once again do npm start.*/}
 const LoginComponent =()=>{
 
     return (
