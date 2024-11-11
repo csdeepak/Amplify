@@ -14,6 +14,17 @@ const SignupComponent = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
+  const signUp = () => {
+    if (email !== confirmEmail) {
+      alert("Email and confirm email fields must match. Please check again.");
+      return;
+    }
+    
+    const data = { email, password, username, firstName, lastName };
+    console.log(data);
+  };
+  
+
 
   return (
     <div className="relative w-full h-full flex flex-col items-center">
@@ -80,7 +91,12 @@ const SignupComponent = () => {
 
         {/* Sign-Up Button */}
         <div className="w-full flex items-center justify-center my-8">
-          <button className="bg-green-600 font-semibold p-3 px-10 rounded-full">SIGN UP</button>
+          <button className="bg-green-600 font-semibold p-3 px-10 rounded-full" onClick={(e)=>{
+            e.preventDefault();
+            signUp();
+           }}>
+            Sign Up
+          </button>
         </div>
 
         {/* Divider */}
