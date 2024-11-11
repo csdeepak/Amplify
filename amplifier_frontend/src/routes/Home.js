@@ -68,27 +68,47 @@ const PlaylistView = () =>{
             <div className="text-2xl font-semibold mb-5">
                 Focus
             </div>
-            <div className="w-full flex justify-between">
-                 <Card title="Peaceful Piano" description="Relax and Indulge with Beautiful Piano Pieces"/>
-                 <Card title="Peaceful Piano" description="Relax and Indulge with Beautiful Piano Pieces"/>
-                 <Card title="Peaceful Piano" description="Relax and Indulge with Beautiful Piano Pieces"/>
-                 <Card title="Peaceful Piano" description="Relax and Indulge with Beautiful Piano Pieces"/>
-                 <Card title="Peaceful Piano" description="Relax and Indulge with Beautiful Piano Pieces"/>
+            <div className="w-full flex justify-between space-x-4">
+                <Card 
+                    title="Peaceful Piano" 
+                    description="Relax and Indulge with Beautiful Piano Pieces"
+                    imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+                />
+                <Card 
+                    title="Deep Focus " 
+                    description="Keep Calm And Focus with Music"
+                    imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+                />
+                <Card 
+                    title="Instrumental Study "
+                    description="Focus With Soft Study Music"
+                    imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+                />
+                <Card 
+                    title="Focus Flow"
+                    description="Up tempo Instrumental Hip Hop Beats"
+                    imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s" 
+                />
+                <Card 
+                    title="Beats to Think to"
+                    description="Focus With Deep Techno And Tch House"
+                    imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+                />
             </div>
         </div>
     );
 };
 
-const Card = ({title,description}) =>{
+const Card = ({title,description,imgUrl}) =>{
     return(
-        <div className="bg-black bg-opacity-60 w-1/6 p-4 rounded-lg">
-            <div className="py-4">
+        <div className="bg-black bg-opacity- w-1/5 p-4  rounded-lg">
+            <div className="pb-4 pt-2">
                 <img className="w-full rounded-md"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDE4cJvMUaRNtQKS6pJCi7je2_72uwO5USw&s"
+                src={imgUrl}
                 alt="label"
                 />
             </div>
-            <div className="text-white text-sm font-semibold">{title}</div>
+            <div className="text-white font-semibold py-3">{title}</div>
             <div className="text-gray-500 text-sm">{description}</div>
         </div>
     );
