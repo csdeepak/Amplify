@@ -8,6 +8,9 @@ const TextInput =({label,placeholder})=>{
      placeholder={placeholder}
      className="p-3 border border-gray-500 border-solid rounded placeholder-gray-800"
      id={label}
+     onChange={(e)=>{
+        setValue(e.target.value)
+     }}
      />
      </div>
     );

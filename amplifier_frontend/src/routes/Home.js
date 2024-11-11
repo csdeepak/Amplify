@@ -60,7 +60,7 @@ const Home = () =>{
         <div className="h-full w-4/5 bg-app-black overflow-auto">
             <div className="navbar w-full h-1/10 bg-black bg-opacity-30 flex items-center justify-end">
                 <div className="w-1/2 flex h-full">
-                    <div className="w-3/5 flex justify-around items-center">
+                    <div className="w-3/5 flex justify-around items-center text-sm">
                         <TextWithHover displayText={"Premium"}/>
                         <TextWithHover displayText={"Support"}/>
                         <TextWithHover displayText={"Download"}/>
