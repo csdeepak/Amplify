@@ -10,7 +10,7 @@ const SignupComponent =()=>{
     return (
         <div className="relative w-full h-full flex flex-col items-center">
           <div className="logo p-5 w-full flex justify-center border-b border-solid border-gray-400">
-            <Icon icon="mdi:spotify" width="110" color="green" />
+          <Icon icon="logos:spotify" width="150" />
           </div> 
           <div className="inputRegion w-1/3 py-5 flex items-center justify-center flex-col">
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
