@@ -16,7 +16,7 @@ function App() {
         }
           <Route path = "/" element={<HelloComponent/>}/>
           <Route path = "/login" element={<LoginComponent/>}/>
-          <Route path ="/signup" element = {<SignupComponent/>}/>
+          <Route path ="/signup" element ={<SignupComponent/>}/>
         </Routes>
       
       </BrowserRouter>
