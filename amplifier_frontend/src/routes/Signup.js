@@ -1,10 +1,12 @@
 // 19th, 20th, and 21st
 // ----if you want Amplify in login page replace Spotify with Amplify.----
-import { useState } from 'react';
-import { Icon } from '@iconify/react';
+import {useState} from "react";
+import {Icon} from "@iconify/react";
 import TextInput from "../components/shared/TextInput";
-import PasswordInput from '../components/shared/PasswordInput';
-import { Link } from 'react-router-dom';
+import PasswordInput from "../components/shared/PasswordInput";
+import {Link} from "react-router-dom";
+import {makeUnauthenticatedPOSTRequest} from "../utils/serverHelpers";
+
 
 const SignupComponent = () => {
   const[email,setEmail]=useState("");
@@ -14,15 +16,26 @@ const SignupComponent = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
-  const signUp = () => {
+  const signUp = async () => {
     if (email !== confirmEmail) {
-      alert("Email and confirm email fields must match. Please check again.");
-      return;
+        alert(
+            "Email and confirm email fields must match. Please check again"
+        );
+        return;
     }
-    
-    const data = { email, password, username, firstName, lastName };
-    console.log(data);
-  };
+    const data = {email, password, username, firstName, lastName};
+    const response = await makeUnauthenticatedPOSTRequest(
+        "/auth/register",
+        data
+    );
+    if (response && !response.err) { 
+      console.log(response);        
+        alert("Success");
+        
+    } else {
+        alert("Failure");
+    }
+};
   
 
 
