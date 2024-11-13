@@ -1,10 +1,11 @@
 // 19th, 20th, and 21st
 // ----if you want Amplify in login page replace Spotify with Amplify.----
 import {useState} from "react";
+import {useCookies} from "react-cookie";
 import {Icon} from "@iconify/react";
 import TextInput from "../components/shared/TextInput";
 import PasswordInput from "../components/shared/PasswordInput";
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 import {makeUnauthenticatedPOSTRequest} from "../utils/serverHelpers";
 
 
@@ -15,29 +16,32 @@ const SignupComponent = () => {
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [cookie,setCookie]=useCookies(["token"]);
+  const navigate = useNavigate();
 
   const signUp = async () => {
     if (email !== confirmEmail) {
         alert(
-            "Email and confirm email fields must match. Please check again"
+          "Email and confirm email fields must match. Please check again"
         );
         return;
     }
     const data = {email, password, username, firstName, lastName};
-    const response = await makeUnauthenticatedPOSTRequest(
-        "/auth/register",
-        data
-    );
+    const response = await makeUnauthenticatedPOSTRequest("/auth/register",data);
     if (response && !response.err) { 
-      console.log(response);        
-        alert("Success");
-        
-    } else {
-        alert("Failure");
+      const token = response.token;
+      const date = new Date();
+      date.setDate(date.getDate() + 30);
+      setCookie("token",token,{path:"/",expires:date});
+      alert("Success");
+      navigate("/home");
+    } 
+    else 
+    {
+      alert("Failure");
     }
 };
   
-
 
   return (
     <div className="relative w-full h-full flex flex-col items-center">
@@ -60,14 +64,14 @@ const SignupComponent = () => {
             placeholder="Enter Your First Name" 
             className="my-6"
             value={firstName}
-            setValue={setFirstName}
+            onChange={setFirstName}
           />
           <TextInput 
             label="Last Name" 
             placeholder="Enter Your Last Name" 
             className="my-6"
             value={lastName}
-            setValue={setLastName}
+            onChange={setLastName}
           />
         </div>
 
@@ -77,21 +81,21 @@ const SignupComponent = () => {
           placeholder="Enter Your Email" 
           className="my-6"
           value={email}
-          setValue={setEmail}
+          onChange={setEmail}
         />
         <TextInput 
           label="Confirm Email Address" 
           placeholder="Enter Your Email Again" 
           className="mb-6"
           value={confirmEmail}
-          setValue={setConfirmEmail}
+          onChange={setConfirmEmail}
         />
         <TextInput 
           label="Username" 
           placeholder="Enter Username" 
           className="mb-6"
           value={username}
-          setValue={setUsername}
+          onChange={setUsername}
         />
 
         {/* Password Field */}
@@ -99,7 +103,7 @@ const SignupComponent = () => {
           label="Create Password" 
           placeholder="Enter a Strong Password Here" 
           value={password}
-          setValue={setPassword}
+          onChange={setPassword}
         />
 
         {/* Sign-Up Button */}

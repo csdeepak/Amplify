@@ -23,12 +23,14 @@ router.post("/register", async (req, res) => {
 
     const newUserData = { email, password: hashedPassword, firstName, lastName, username };
     const newUser = await User.create(newUserData);
+    console.log(newUserData);
 
     // We want to create a token to return to the user.
     const token = await getToken(email, newUser);
 
     // Return the result to the user.
-    const userToReturn = { ...newUser.toJSON(), token };
+    const userToReturn = {...newUser.toJSON(), token };
+    console.log(userToReturn);
     delete userToReturn.password; // Do not return hashed Password for security purposes.
 
     return res.status(200).json(userToReturn);

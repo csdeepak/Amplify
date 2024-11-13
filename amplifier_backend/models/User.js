@@ -10,7 +10,11 @@ const mongoose=require("mongoose");
 const User = new mongoose.Schema({
     firstName: {type: String, required:true,},
     // type defines data type and required is used that this feild is must for the user to fill without this feild a user cannot exist.
-
+    password:{
+        type: String,
+        required: true,
+        private: true,
+    },
     lastName: {
         type:String,
         required:false,
@@ -38,5 +42,4 @@ const User = new mongoose.Schema({
 });
 
 const UserModel = mongoose.model("User",User);
-
 module.exports = UserModel;
