@@ -8,6 +8,7 @@ import {Link,useNavigate} from 'react-router-dom';
 import { makeUnauthenticatedPOSTRequest } from '../utils/serverHelpers';
 import {useCookies} from 'react-cookie';
 
+
 {/* every time u make  changes in  tailwind.config.js run this commnad npx tailwindcss@2 build src/index.css -c tailwind.config.js -o src/output.css  and once again do npm start.*/}
 const LoginComponent =()=>{
   const [email,setEmail] =useState("");
@@ -40,8 +41,19 @@ const LoginComponent =()=>{
           <div className="inputRegion w-1/3 py-5 flex items-center justify-center flex-col">
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
             <div className="font-bold mb-4">To Continue, Log In to Spotify.</div>
-            <TextInput label="Email Address or Username" placeholder="Email Address or Username" className="my-3" value={email} onChange={setEmail}/>
-            <PasswordInput label="Password" placeholder="Password" value={password} onChange={setPassword}/>  {/* instead of setValue i gave onChange because it is showing ERROR */}
+            <TextInput
+                    label="Email address or username"
+                    placeholder="Email address or username"
+                    className="my-6"
+                    value={email}
+                    setValue={setEmail}
+                />
+              <PasswordInput
+                    label="Password"
+                    placeholder="Password"
+                    value={password}
+                    setValue={setPassword}
+                />{/* instead of setValue i gave onChange because it is showing ERROR */}
             <div className="w-full flex items-center justify-end my-8">
             <button className="bg-green-600 font-semibold p-3 px-10 rounded-full" onClick={(e) =>{ 
               e.preventDefault();
