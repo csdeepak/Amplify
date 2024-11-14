@@ -42,7 +42,7 @@ router.get("/get/artist/:artistId",passport.authenticate("jwt",{session:false}),
    //!null = true
    //!undefined =true
    if(!artist){
-    return res.status(301).json({err:"Artist Does Not Exists"});
+    return res.status(400).json({err:"Artist Does Not Exists"});
    }
    const songs = await Song.find({artist:artistId});
    return res.status(200).json({data:songs});
