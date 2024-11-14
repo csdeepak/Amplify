@@ -7,6 +7,7 @@ import HomeComponent from "./routes/Home";
 import {useCookies} from "react-cookie";
 import LoggedInHomeComponent from "./routes/LoggedInHome";
 import UploadSong from "./routes/UploadSong";
+import MyMusiuc from "./routes/MyMusic";
 
 function App() {
   const [cookie,setCookie] = useCookies(["token"]);
@@ -22,6 +23,7 @@ function App() {
             <Route path = "/" element={<HelloComponent/>}/>
             <Route path="/home"  element={<LoggedInHomeComponent/>}/>
             <Route path="/uploadSong" element={<UploadSong/>}/>
+            <Route path="/myMusic" element={<MyMusiuc/>}/>
             <Route path="*" element={<Navigate to="/home"/>}/> {/*  " * " in path it represents if i go to any other send me to home page. */}
 
           </Routes>
