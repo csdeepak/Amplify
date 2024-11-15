@@ -79,7 +79,7 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
                     </div>
                     <div className="py-5">
                         <IconText iconName={"material-symbols:home"} displayText={"Home"} targetLink={"/home"} active={curActiveScreen === "home"}/>
-                        <IconText iconName={"ic:round-search"} displayText={"Search"} active={curActiveScreen === "saerch"}/>
+                        <IconText iconName={"ic:round-search"} displayText={"Search"} active={curActiveScreen === "search"} targetLink={"/search"}/>
                         <IconText iconName={"mdi:bookshelf"} displayText={"Library"} active={curActiveScreen === "library"}/>
                         <IconText iconName={"fxemoji:musicascend"} displayText={"My Music"} targetLink={"/myMusic"} active={curActiveScreen === "myMusic"}/>
                     </div>

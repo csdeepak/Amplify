@@ -10,7 +10,7 @@ import LoggedInHomeComponent from "./routes/LoggedInHome";
 import UploadSong from "./routes/UploadSong";
 import {useCookies} from "react-cookie";
 import songContext from "./contexts/songContext";
-
+import SearchPage from "./routes/SearchPage";
 function App() {
   const [currentSong,setCurrentSong]=useState(null);
   const [soundPlayed,setSoundPlayed]=useState(null);
@@ -30,6 +30,7 @@ function App() {
                 <Route path="/home"  element={<LoggedInHomeComponent/>}/>
                 <Route path="/uploadSong" element={<UploadSong/>}/>
                 <Route path="/myMusic" element={<MyMusic/>}/>
+                <Route path="/search" element={<SearchPage/>}/>
                 <Route path="*" element={<Navigate to="/home"/>}/> {/*  " * " in path it represents if i go to any other send me to home page. */}
             
           </Routes>
