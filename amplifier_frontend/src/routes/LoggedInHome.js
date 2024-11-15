@@ -36,7 +36,7 @@ const EnglishAlbumCardsData =[{title:"Justin Bieber",description:"Artist",imgUrl
 
 const Home =()=>{
     return(
-        <LoggedInContainer>
+        <LoggedInContainer curActiveScreen="home">
                     <PlaylistView titleText="Focus" cardsData={focusCardsData}/>
                     <PlaylistView titleText="Spotify Playlist" cardsData={spotifyPalylistsCardData}/>
                     <PlaylistView titleText="Telugu Album" cardsData={TeluguAlbumCardsData}/>

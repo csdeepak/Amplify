@@ -19,10 +19,11 @@ const UploadSong = () => {
         const data = {name, thumbnail, track: playlistUrl};
         const response = await makeAuthenticatedPOSTRequest(
             "/song/create",
-            data
+            console.log(data)
         );
         if (response.err) {
             alert("Could not create song");
+            console.log(response.err)
             return;
         }
         alert("Success");
