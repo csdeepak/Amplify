@@ -1,6 +1,8 @@
 import spotify_logo from "../assets/images/spotify_logo_white.svg";
 import IconText from "../components/shared/IconText";
+import { useState } from "react";
 import {Icon} from "@iconify/react"
+import {Howl, Howler} from 'howler';
 import TextWithHover from "../components/shared/TextWithHover";
 
 const focusCardsData =[{title:"Peaceful Piano",description:"Relax and Indulge with Beautiful Piano Pieces",imgUrl:"https://images.unsplash.com/photo-1577877777751-3f1ec20a0715?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2lybCUyMHBsYXlpbmclMjBwaWFub3xlbnwwfHwwfHx8MA%3D%3D"},
@@ -31,8 +33,45 @@ const EnglishAlbumCardsData =[{title:"Justin Bieber",description:"Artist",imgUrl
                         ];
 
 const Home = () =>{
+    const [soundPlayed,setSoundPlayed]=useState(null);
+    const [isPaused,setIsPaused]=useState(true);
+
+    const playSound = (songSrc)=> 
+        {
+            if (soundPlayed){
+                soundPlayed.stop();
+            }
+
+            let sound = new Howl(
+                {
+                    src: [songSrc],
+                    html5: true
+                });
+            setSoundPlayed(sound);
+            sound.play();
+            console.log(sound);
+        };
+
+    const pauseSound = () => {
+        if (soundPlayed) {
+                    soundPlayed.pause();
+            }
+        };
+        
+
+    const togglePlayPause=()=>{
+        if(isPaused){
+            playSound("https://res.cloudinary.com/doioswwbr/video/upload/v1731605698/kmc98lkur1zt5djoz3e0.mp3");
+            setIsPaused(false);
+        }
+        else{
+            pauseSound();
+            setIsPaused(true);
+        }
+    };
+
     return( 
-    <div className="h-full w-full bg-black">
+    <div className="h-full w-full bg-app-black">
         <div className="h-9/10 w-full flex">
             {/*this first  div tag is for left pannel*/}
             <div className="h-full w-1/5 bg-black flex flex-col justify-between pb-10">
@@ -92,8 +131,29 @@ const Home = () =>{
                 </div>
             </div>
         </div> 
-        <div className="w-full h-1/20 bg-black bg-opacity-30 ">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSWDO6rpgwFGEvAU3GLkzwrkHplgXh8yLT9w&s"/>
+        <div className="w-full h-1/10 bg-black bg-opacity-30 text-white flex items-center px-4">
+            <div className="w-1/4 flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSWDO6rpgwFGEvAU3GLkzwrkHplgXh8yLT9w&s"
+                        alt="currentSongThumbnail"
+                        className="h-14 w-14 rounded"
+                />
+                <div className="pl-4">
+                    <div className="text-sm hover:underline cursor-pointer">Expresso</div>
+                    <div className="text-xs text-gray-500 hover:underline cursor-pointe">Sabrina Carpenter</div>
+                </div>
+            </div>
+            <div className="w-1/2 flex justify-center flex-col items-center">
+                <div  className="flex w-2/5 justify-between items-center">
+                    <Icon icon="gravity-ui:shuffle" fontSize={30} className="cursor-pointer text-gray-300 hover:text-white"/>
+                    <Icon icon="fluent:previous-16-filled"fontSize={30} className="cursor-pointer text-gray-300 hover:text-white"/>
+                    <Icon icon={isPaused?"ic:baseline-play-circle":"ic:baseline-pause-circle"}fontSize={45} className="cursor-pointer text-gray-300 hover:text-white" onClick={togglePlayPause}/>
+                    <Icon icon="fluent:next-16-filled" fontSize={30} className="cursor-pointer text-gray-300 hover:text-white"/>
+                    <Icon icon="mi:repeat" fontSize={30} className="cursor-pointer text-gray-300 hover:text-white"/>
+                    
+                </div>
+                <div></div>
+            </div>
+            <div className="w-1/4 flex justify-end">hello</div>   
         </div>   
     </div>      
     );
