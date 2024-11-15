@@ -5,11 +5,12 @@ import {Icon} from "@iconify/react"
 import {Howl, Howler} from 'howler';
 import TextWithHover from "../components/shared/TextWithHover";
 import songContext from "../contexts/songContext";
+import CreatePlaylistModal from "../modals/CreatePlaylistModal";
 
 
 const LoggedInContainer = ({children,curActiveScreen}) =>{
 
-
+    const [createPlaylistModalOpen,setCreatePlaylistModalOpen] =useState(false); 
     const {currentSong,setCurrentSong,soundPlayed,setSoundPlayed,isPaused,setIsPaused,} = useContext(songContext);
     const firstUpdate = useRef(true);
 
@@ -68,6 +69,7 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
 
     return( 
     <div className="h-full w-full bg-app-black">
+        { createPlaylistModalOpen &&  <CreatePlaylistModal closeModal={()=>{setCreatePlaylistModalOpen(false);}}/>}
         <div className={`${currentSong? "h-9/10":"h-full"} w-full flex`}>
             {/*this first  div tag is for left pannel*/}
             <div className="h-full w-1/5 bg-black flex flex-col justify-between pb-10">
@@ -84,7 +86,7 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
                         <IconText iconName={"fxemoji:musicascend"} displayText={"My Music"} targetLink={"/myMusic"} active={curActiveScreen === "myMusic"}/>
                     </div>
                     <div className="pt-5">
-                    <IconText iconName={"material-symbols:add-box"} displayText={"Create Playlist"} />
+                    <IconText iconName={"material-symbols:add-box"} displayText={"Create Playlist"} onClick={()=>{setCreatePlaylistModalOpen(true);}} />
                     <IconText iconName={"fluent-emoji-flat:red-heart"} displayText={"Liked Songs"}/>
                     </div>
                 </div>
