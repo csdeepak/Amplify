@@ -54,7 +54,7 @@ router.get("/get/playlist/:playlistId",passport.authenticate("jwt",{session:fals
 router.get("/get/me",passport.authenticate("jwt",{session:false}),async(req,res)=>
     {
         const artistId = req.user._id;
-        const playlists= await Playlist.find({owner:artistId}.populate("owner")); // if valid return artist playlist to the user.
+        const playlists= await Playlist.find({owner:artistId}).populate("owner"); // if valid return artist playlist to the user.
         return res.status(200).json({data:playlists});
     });
 

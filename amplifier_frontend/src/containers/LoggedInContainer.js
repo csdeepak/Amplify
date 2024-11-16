@@ -7,7 +7,8 @@ import TextWithHover from "../components/shared/TextWithHover";
 import songContext from "../contexts/songContext";
 import CreatePlaylistModal from "../modals/CreatePlaylistModal";
 import AddToPlaylistModal from "../modals/AddToPlaylistModal";
-import { set } from "mongoose";
+import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
+//import { set } from "mongoose";
 
 
 const LoggedInContainer = ({children,curActiveScreen}) =>{
@@ -86,7 +87,7 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
     return( 
     <div className="h-full w-full bg-app-black">
         { createPlaylistModalOpen &&  <CreatePlaylistModal closeModal={()=>{setCreatePlaylistModalOpen(false);}}/>}
-        {addToPlaylistModalOpen && (
+        {AddToPlaylistModalOpen && (
                 <AddToPlaylistModal
                     closeModal={() => {
                         setAddToPlaylistModalOpen(false);
@@ -175,8 +176,8 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
                 </div>
             </div>
             <div className="w-1/4 flex justify-end pr-4 space-x-4 items-center">
-                <Icon icon="zondicons:playlist" fontSize={30} className="cursor-pointer" onClick={()=>setAddToPlaylistModalOpen(true)} text-gray-500 hover:text-white/>
-                <Icon icon="iconoir:heart-solid" fontSize={30} className="cursor-pointer" text-gray-500 hover:text-white/>
+                <Icon icon="zondicons:playlist" fontSize={30} className="cursor-pointer" onClick={()=>setAddToPlaylistModalOpen(true)} text-gray-500 />
+                <Icon icon="iconoir:heart-solid" fontSize={30} className="cursor-pointer" text-gray-500 />
             </div>   
         </div> 
     }  

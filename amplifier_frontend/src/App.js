@@ -34,7 +34,7 @@ function App() {
                 <Route path="/myMusic" element={<MyMusic/>}/>
                 <Route path="/search" element={<SearchPage/>}/>
                 <Route path="/Library" element={<Library/>}/> 
-                <Route path="/playlist/playlistId" element={<SinglePlaylistView/>}/>                
+                <Route path="/playlist/:playlistId" element={<SinglePlaylistView />} />               
                 <Route path="*" element={<Navigate to="/home"/>}/> {/*  " * " in path it represents if i go to any other send me to home page. */}
             
           </Routes>
