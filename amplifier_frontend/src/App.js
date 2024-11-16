@@ -11,6 +11,8 @@ import UploadSong from "./routes/UploadSong";
 import {useCookies} from "react-cookie";
 import songContext from "./contexts/songContext";
 import SearchPage from "./routes/SearchPage";
+import Library from "./routes/Library";
+import SinglePlaylistView from "./routes/SinglePlaylistView";
 function App() {
   const [currentSong,setCurrentSong]=useState(null);
   const [soundPlayed,setSoundPlayed]=useState(null);
@@ -31,6 +33,8 @@ function App() {
                 <Route path="/uploadSong" element={<UploadSong/>}/>
                 <Route path="/myMusic" element={<MyMusic/>}/>
                 <Route path="/search" element={<SearchPage/>}/>
+                <Route path="/Library" element={<Library/>}/> 
+                <Route path="/playlist/playlistId" element={<SinglePlaylistView/>}/>                
                 <Route path="*" element={<Navigate to="/home"/>}/> {/*  " * " in path it represents if i go to any other send me to home page. */}
             
           </Routes>

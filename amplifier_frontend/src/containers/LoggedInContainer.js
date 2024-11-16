@@ -6,11 +6,14 @@ import {Howl, Howler} from 'howler';
 import TextWithHover from "../components/shared/TextWithHover";
 import songContext from "../contexts/songContext";
 import CreatePlaylistModal from "../modals/CreatePlaylistModal";
+import AddToPlaylistModal from "../modals/AddToPlaylistModal";
+import { set } from "mongoose";
 
 
 const LoggedInContainer = ({children,curActiveScreen}) =>{
 
     const [createPlaylistModalOpen,setCreatePlaylistModalOpen] =useState(false); 
+    const [AddToPlaylistModalOpen,setAddToPlaylistModalOpen]=useState(false);
     const {currentSong,setCurrentSong,soundPlayed,setSoundPlayed,isPaused,setIsPaused,} = useContext(songContext);
     const firstUpdate = useRef(true);
 
@@ -25,6 +28,19 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
         }
         changeSong(currentSong.track);
     },[currentSong && currentSong.track]);
+
+    const addSongToPlaylist = async (playlistId) => {
+        const songId = currentSong._id;
+
+        const payload = {playlistId, songId};
+        const response = await makeAuthenticatedPOSTRequest(
+            "/playlist/add/song",
+            payload
+        );
+        if(response._id){
+            setAddToPlaylistModalOpen(false)
+        }
+    };
 
     const playSound = () =>{
         if(!soundPlayed){
@@ -70,6 +86,14 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
     return( 
     <div className="h-full w-full bg-app-black">
         { createPlaylistModalOpen &&  <CreatePlaylistModal closeModal={()=>{setCreatePlaylistModalOpen(false);}}/>}
+        {addToPlaylistModalOpen && (
+                <AddToPlaylistModal
+                    closeModal={() => {
+                        setAddToPlaylistModalOpen(false);
+                    }}
+                    addSongToPlaylist={addSongToPlaylist}
+                />
+        )}
         <div className={`${currentSong? "h-9/10":"h-full"} w-full flex`}>
             {/*this first  div tag is for left pannel*/}
             <div className="h-full w-1/5 bg-black flex flex-col justify-between pb-10">
@@ -82,7 +106,7 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
                     <div className="py-5">
                         <IconText iconName={"material-symbols:home"} displayText={"Home"} targetLink={"/home"} active={curActiveScreen === "home"}/>
                         <IconText iconName={"ic:round-search"} displayText={"Search"} active={curActiveScreen === "search"} targetLink={"/search"}/>
-                        <IconText iconName={"mdi:bookshelf"} displayText={"Library"} active={curActiveScreen === "library"}/>
+                        <IconText iconName={"mdi:bookshelf"} displayText={"Library"} active={curActiveScreen === "library"} targetLink={"/library"}/>
                         <IconText iconName={"fxemoji:musicascend"} displayText={"My Music"} targetLink={"/myMusic"} active={curActiveScreen === "myMusic"}/>
                     </div>
                     <div className="pt-5">
@@ -150,7 +174,10 @@ const LoggedInContainer = ({children,curActiveScreen}) =>{
                     
                 </div>
             </div>
-            <div className="w-1/4 flex justify-end">hello</div>   
+            <div className="w-1/4 flex justify-end pr-4 space-x-4 items-center">
+                <Icon icon="zondicons:playlist" fontSize={30} className="cursor-pointer" onClick={()=>setAddToPlaylistModalOpen(true)} text-gray-500 hover:text-white/>
+                <Icon icon="iconoir:heart-solid" fontSize={30} className="cursor-pointer" text-gray-500 hover:text-white/>
+            </div>   
         </div> 
     }  
     </div>      
