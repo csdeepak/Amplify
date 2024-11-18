@@ -28,7 +28,7 @@ function App() {
         <songContext.Provider value={{currentSong,setCurrentSong ,soundPlayed,setSoundPlayed,isPaused,setIsPaused,}}>
            <Routes>
                 { /* adding routes components here indicates to the package{react-router-dom} that  we are starting  to define our routes inside this */}
-                <Route path = "/" element={<HelloComponent/>}/>
+                
                 <Route path="/home"  element={<LoggedInHomeComponent/>}/>
                 <Route path="/uploadSong" element={<UploadSong/>}/>
                 <Route path="/myMusic" element={<MyMusic/>}/>
@@ -41,9 +41,10 @@ function App() {
         </songContext.Provider>
         ): (
             <Routes>
-              <Route path="/home"  element={<HomeComponent/>}/>
+              
               <Route path = "/login" element={<LoginComponent/>}/>
               <Route path ="/signup" element ={<SignupComponent/>}/>
+              <Route path="/home"  element={<HomeComponent/>}/>
               <Route path="*" element={<Navigate to="/login"/>}/>
             </Routes>
 

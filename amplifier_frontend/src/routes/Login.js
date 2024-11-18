@@ -42,8 +42,8 @@ const LoginComponent =()=>{
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
             <div className="font-bold mb-4">To Continue, Log In to Spotify.</div>
             <TextInput
-                    label="Email address or username"
-                    placeholder="Email address or username"
+                    label="Email address"
+                    placeholder="Email address"
                     className="my-6"
                     value={email}
                     setValue={setEmail}
