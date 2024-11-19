@@ -40,7 +40,7 @@ const LoginComponent =()=>{
           </div> 
           <div className="inputRegion w-1/3 py-5 flex items-center justify-center flex-col">
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
-            <div className="font-bold mb-4">To Continue, Log In to Spotify.</div>
+            <div className="font-bold mb-4">To Continue, Log In to  Amplify.</div>
             <TextInput
                     label="Email address"
                     placeholder="Email address"
@@ -64,7 +64,7 @@ const LoginComponent =()=>{
             <div className="w-full border  border-solid border-gray-400"></div>
             <div className="my-6 font-semibold text-lg">Don't Have an Account?</div> {/* text-lg purpose to  shrinks. */}
             <div className="border border-gray-500 text-gray-500 w-full flex items-center justify-center py-4 rounded-full font-bold">
-            <Link to="/signup"> SIGN UP FOR SPOTIFY</Link>  {/* if i use a href instead of link it refreshes the whole which reduces the effeciency but if i use link tag it doesnot refresh those things which is common. */ }
+            <Link to="/signup"> SIGN UP FOR AMPLIFY</Link>  {/* if i use a href instead of link it refreshes the whole which reduces the effeciency but if i use link tag it doesnot refresh those things which is common. */ }
             </div>
           </div>
         </div>
