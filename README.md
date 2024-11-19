@@ -1,102 +1,43 @@
-# Amplify 🎶
+# 🎵 Amplify  
 **A Web Technology Project - Bringing Music to Life**
 
-Amplify is a music streaming web application developed as part of a college project, inspired by platforms like Spotify. With personalized playlists, an extensive library, and smooth navigation, Amplify aims to deliver a seamless, immersive music experience.
+Welcome to **Amplify**, a music streaming and podcasting web application. This project is divided into two main modules:  
+
+- 🌐 [Frontend](./amplifier_frontend/README.md)  
+- ⚙️ [Backend](./amplifier_backend/README.md)  
+
+Click on the module names above to explore their specific features, functions, and implementation details.
 
 ---
 
-## 🎯 Project Overview
-Amplify is designed as a modern, feature-rich music streaming platform that mimics the core functionality of Spotify. This project combines web development skills to create an engaging user interface with backend functionalities, enabling users to explore, search, and play their favorite tunes.
+## 📂 Project Structure  
 
-### Key Features
-- 🎧 **Personalized Playlists:** Curated playlists tailored to your taste
-- 🔍 **Search Functionality:** Effortlessly search for songs, artists, and albums
-- 📂 **Extensive Music Library:** Access a wide range of genres and tracks
-- ⭐ **Recommendations:** Suggested songs based on listening history
-- 🚀 **User-Friendly Interface:** Smooth navigation and intuitive controls
-
----
-
-## 💻 Tech Stack
-Amplify is built using a combination of frontend and backend technologies to deliver a responsive and interactive user experience.
-
-### Frontend
-- **HTML5** and **CSS3**: For structuring and styling
-- **JavaScript**: For dynamic content and interactivity
-- **React.js** (or other framework, if used): To create a fast and responsive interface
-
-### Backend
-- **Node.js**: For server-side functionality
-- **Express**: For handling routes and API endpoints
-- **MongoDB**: For data storage (if using a NoSQL approach)
-
-### Additional Tools
-- **Git & GitHub**: For version control and collaboration
-- **VS Code**: Primary development environment
-
----
-
+The repository is structured as follows:  
 
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Links  
 
-To set up Amplify on your local machine, follow these steps:
+- 🌐 [Frontend README](./amplifier_frontend/README.md)  
+  Details about the user interface, components, and frontend functionality.  
+- ⚙️ [Backend README](./amplifier_backend/README.md)  
+  Details about APIs, database interactions, and server-side logic.  
 
-### Prerequisites
-- **Node.js** and **npm** installed
-- **MongoDB** (if using a database)
+---
 
-### Installation
-1. Clone the repository:
+## 🛠️ Getting Started  
+
+Follow these steps to set up Amplify on your local machine:
+
+### Prerequisites  
+- **Node.js** and **npm** installed.  
+- **MongoDB** for the backend.  
+
+### Setup  
+
+1. **Clone the Repository**:  
    ```bash
    git clone https://github.com/yourusername/amplify.git
-Navigate to the project directory:
 
-bash
-Copy code
-cd amplify
-Install dependencies for both frontend and backend:
 
-bash
-Copy code
-cd amplifier_frontend
-npm install
-cd ../amplifier_backend
-npm install
-Start the application:
-
-bash
-Copy code
-# In amplifier_frontend
-npm start
-
-# In amplifier_backend
-npm run dev
-Visit http://localhost:3000 in your browser to explore Amplify.
-
-# 🎨 UI Previews
-The Amplify homepage with easy navigation and curated playlists.
-
-Search your favorite songs and explore recommendations.
-
-# 🤝 Contributing
-Contributions are welcome! To get started:
-
-Fork this repository.
-Create a new branch (feature/YourFeature).
-Commit your changes.
-Push to your branch and open a pull request.
-Please see our Contributing Guidelines for more details.
-
- # 📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-# 📞 Contact
-For any inquiries or feedback, feel free to reach out!
-
-Developer: C S Deepak<br>
-Developer: CHENNUPATI Gunadeep
-   7760043176<br>
-Project Repository: GitHub
