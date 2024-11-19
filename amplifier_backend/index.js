@@ -27,7 +27,7 @@ app.use(express.json());
 
 mongoose.connect("mongodb+srv://CSDEEPAK:"+process.env.MONGO_PASSWORD+"@amplify.uvhj4.mongodb.net/?retryWrites=true&w=majority&appName=Amplify")
     .then(() => {
-        console.log("Connected to Mongo!!!");
+        console.log("---Connected to Mongo Successfully---");
     })
     .catch((err) => {
         console.error("Error while Connection", err);
