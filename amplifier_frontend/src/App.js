@@ -41,10 +41,9 @@ function App() {
         </songContext.Provider>
         ): (
             <Routes>
-              
+              <Route path="/home"  element={<HomeComponent/>}/>
               <Route path = "/login" element={<LoginComponent/>}/>
               <Route path ="/signup" element ={<SignupComponent/>}/>
-              <Route path="/home"  element={<HomeComponent/>}/>
               <Route path="*" element={<Navigate to="/login"/>}/>
             </Routes>
 
