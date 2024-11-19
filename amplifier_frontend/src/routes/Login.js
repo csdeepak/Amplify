@@ -36,7 +36,8 @@ const LoginComponent =()=>{
     return (
         <div className="relative w-full h-full flex flex-col items-center">
           <div className="logo p-5 w-full flex justify-center border-b border-solid border-gray-400">
-          <Icon icon="logos:aws-amplify" width="120" />
+          <Icon icon="solar:music-note-slider-bold" width="120" height="120"  style={{color:"green"}} />
+
           </div> 
           <div className="inputRegion w-1/3 py-5 flex items-center justify-center flex-col">
             { /* i will have my 2 inputs ( email and password) and i will have my sign Up */}
@@ -55,7 +56,7 @@ const LoginComponent =()=>{
                     setValue={setPassword}
                 />{/* instead of setValue i gave onChange because it is showing ERROR */}
             <div className="w-full flex items-center justify-end my-8">
-            <button className="bg-yellow-400 font-semibold p-3 px-10 rounded-full" onClick={(e) =>{ 
+            <button className="bg-green-600 font-semibold p-3 px-10 rounded-full" onClick={(e) =>{ 
               e.preventDefault();
               login();
             }}>

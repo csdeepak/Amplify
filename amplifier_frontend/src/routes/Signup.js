@@ -43,7 +43,7 @@ const SignupComponent = () => {
     return (
         <div className="w-full h-full flex flex-col items-center">
             <div className="logo p-5 border-b border-solid border-gray-300 w-full flex justify-center">
-                <Icon icon="logos:aws-amplify" width="120" />
+            <Icon icon="solar:music-note-slider-bold" width="120" height="120"  style={{color:"green"}} />
             </div>
             <div className="inputRegion w-1/3 py-10 flex items-center justify-center flex-col">
                 {/*  I will have my 2 inputs(email and password) and I will have my sign up instead button*/}
@@ -95,7 +95,7 @@ const SignupComponent = () => {
                 />
                 <div className=" w-full flex items-center justify-center     my-8">
                     <button
-                        className="bg-yellow-400 font-semibold p-3 px-10 rounded-full"
+                        className="bg-green-600 font-semibold p-3 px-10 rounded-full"
                         onClick={(e) => {
                             e.preventDefault();
                             signUp();
