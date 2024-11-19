@@ -2,7 +2,7 @@ import spotify_logo from "../assets/images/spotify_logo_white.svg";
 import IconText from "../components/shared/IconText";
 import {Icon} from "@iconify/react"
 import TextWithHover from "../components/shared/TextWithHover";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 
 const focusCardsData =[{title:"Peaceful Piano",description:"Relax and Indulge with Beautiful Piano Pieces",imgUrl:"https://images.unsplash.com/photo-1577877777751-3f1ec20a0715?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2lybCUyMHBsYXlpbmclMjBwaWFub3xlbnwwfHwwfHx8MA%3D%3D"},
                        {title:"Deep Focus", description:"Keep Calm And Focus with Music",imgUrl:"https://images.unsplash.com/photo-1453748866136-b1dd97284f49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHN0dWR5fGVufDB8fDB8fHww"},
@@ -39,10 +39,17 @@ const Home = () =>{
 
                 </div>
                 <div className="py-5">
-                    <IconText iconName={"material-symbols:home"} displayText={"Home"} active/>
-                    <IconText iconName={"ic:round-search"} displayText={"Search"}/>
-                    <IconText iconName={"mdi:bookshelf"} displayText={"Library"}/>
+                    <div onClick={() => navigate("/login")} className="cursor-pointer">
+                        <IconText iconName={"material-symbols:home"} displayText={"Home"} active/>
+                    </div>
+                    <div onClick={() => navigate("/login")} className="cursor-pointer">
+                        <IconText iconName={"ic:round-search"} displayText={"Search"} />
+                    </div>
+                    <div onClick={() => navigate("/login")} className="cursor-pointer">
+                        <IconText iconName={"mdi:bookshelf"} displayText={"Library"} />
+                    </div>
                 </div>
+
                 <div className="pt-5">
                 <IconText iconName={"material-symbols:add-box"} displayText={"Create Playlist"}/>
                 <IconText iconName={"fluent-emoji-flat:red-heart"} displayText={"Liked Songs"}/>
