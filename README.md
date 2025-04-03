@@ -3,8 +3,8 @@
 
 Welcome to **Amplify**, a music streaming and podcasting web application. This project consists of two main modules:
 
-- 🌐 [Frontend](./amplifier_frontend/README.md) – User interface and client-side functionality.
-- ⚙️ [Backend](./amplifier_backend/README.md) – API services, authentication, and database management.
+- 🌐 [Frontend](./amplifier_frontend) – User interface and client-side functionality.
+- ⚙️ [Backend](./amplifier_backend) – API services, authentication, and database management.
 
 ---
 
