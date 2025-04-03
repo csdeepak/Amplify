@@ -1,43 +1,106 @@
 # 🎵 Amplify  
 **A Web Technology Project - Bringing Music to Life**
 
-Welcome to **Amplify**, a music streaming and podcasting web application. This project is divided into two main modules:  
+Welcome to **Amplify**, a music streaming and podcasting web application. This project consists of two main modules:
 
-- 🌐 [Frontend](./amplifier_frontend/README.md)  
-- ⚙️ [Backend](./amplifier_backend/README.md)  
-
-Click on the module names above to explore their specific features, functions, and implementation details.
+- 🌐 [Frontend](./amplifier_frontend/README.md) – User interface and client-side functionality.
+- ⚙️ [Backend](./amplifier_backend/README.md) – API services, authentication, and database management.
 
 ---
 
 ## 📂 Project Structure  
-
-The repository is structured as follows:  
-
-
----
-
-## 🚀 Quick Links  
-
-- 🌐 [Frontend README](./amplifier_frontend/README.md)  
-  Details about the user interface, components, and frontend functionality.  
-- ⚙️ [Backend README](./amplifier_backend/README.md)  
-  Details about APIs, database interactions, and server-side logic.  
+- `amplifier_frontend/` – React-based frontend.
+- `amplifier_backend/` – Node.js and MongoDB-powered backend.
 
 ---
 
-## 🛠️ Getting Started  
+## 🛠️ Prerequisites  
+Ensure you have the following installed before setup:
 
-Follow these steps to set up Amplify on your local machine:
+### General Requirements
+- [Node.js](https://nodejs.org/) and npm
+- [MongoDB](https://www.mongodb.com/) (for database)
 
-### Prerequisites  
-- **Node.js** and **npm** installed.  
-- **MongoDB** for the backend.  
+### Backend Dependencies
+- **Express** (`express`)
+- **MongoDB Driver** (`mongodb`)
+- **Mongoose** (`mongoose`)
+- **JSON Web Token (JWT)** (`jsonwebtoken`)
+- **Passport for Authentication** (`passport`, `passport-jwt`)
+- **Bcrypt for Password Hashing** (`bcrypt`)
+- **CORS Handling** (`cors`)
+- **Environment Variable Management** (`dotenv`)
 
-### Setup  
+### Frontend Dependencies
+- **React** (`react`, `react-dom`)
+- **React Router** (`react-router-dom`)
+- **Tailwind CSS** (`tailwindcss`, `postcss`)
+- **Howler for Audio Playback** (`howler`)
+- **Cloudinary for Media Uploads** (`cloudinary-core`)
+- **React Cookie Management** (`react-cookie`, `react-cookies`)
+- **Testing Libraries** (`@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`)
+- **Web Performance Metrics** (`web-vitals`)
+
+---
+
+## 🚀 Getting Started  
+
+### Setup Instructions
 
 1. **Clone the Repository**:  
    ```bash
    git clone https://github.com/yourusername/amplify.git
+   cd amplify
+   ```
 
+2. **Setup Backend**:  
+   ```bash
+   cd amplifier_backend
+   npm install
+   node index.js
+   ```
+
+3. **Setup Frontend**:  
+   ```bash
+   cd amplifier_frontend
+   npm install
+   npm start
+   ```
+
+---
+
+## 📌 Quick Links  
+- 📜 [Frontend Documentation](./amplifier_frontend/README.md)  
+- 📜 [Backend Documentation](./amplifier_backend/README.md)  
+
+---
+
+## 🖼️ Screenshots  
+Here are some screenshots of the project:
+- ![Home Page](./screenshots/homepage.png)
+- ![Music Player](./screenshots/music_player.png)
+- ![Authentication](./screenshots/authentication.png)
+
+---
+
+## 🎥 Video Demo  
+Check out the live demo of **Amplify** in action:  
+[🎬 Watch Demo](https://your-video-link.com)
+
+---
+
+## 👥 Owners  
+- **Gunadeep** (Backend & Frontend Development)
+- **Frank (Deepak)** (Frontend & UI Design, Integration)
+- 
+
+---
+
+## 📧 Contact  
+For any queries or contributions, feel free to reach out:
+- 📩 **Gunadeep** - gunadeep@example.com
+- 📩 **Deepak** - csdeepak2005@example.com
+  
+
+Amplify is now up and running! 🎶
 
