@@ -3,8 +3,8 @@
 
 Welcome to **Amplify**, a music streaming and podcasting web application. This project consists of two main modules:
 
-- 🌐 [Frontend](./amplifier_frontend/README.md) – User interface and client-side functionality.
-- ⚙️ [Backend](./amplifier_backend/README.md) – API services, authentication, and database management.
+- 🌐 [Frontend](./amplifier_frontend) – User interface and client-side functionality.
+- ⚙️ [Backend](./amplifier_backend) – API services, authentication, and database management.
 
 ---
 
@@ -77,9 +77,12 @@ Ensure you have the following installed before setup:
 
 ## 🖼️ Screenshots  
 Here are some screenshots of the project:
-- ![Home Page](./screenshots/homepage.png)
-- ![Music Player](./screenshots/music_player.png)
-- ![Authentication](./screenshots/authentication.png)
+- ![Home Page](https://github.com/csdeepak/Amplify/blob/main/Amplify_screenshots/home.jpg)
+- ![Login_page](https://github.com/csdeepak/Amplify/blob/main/Amplify_screenshots/login_page.jpg)
+- ![Playlist](https://github.com/csdeepak/Amplify/blob/main/Amplify_screenshots/playlist.jpg)
+- ![Search](https://github.com/csdeepak/Amplify/blob/main/Amplify_screenshots/search.jpg)
+- ![Upload](https://github.com/csdeepak/Amplify/blob/main/Amplify_screenshots/upload.jpg)
+
 
 ---
 
