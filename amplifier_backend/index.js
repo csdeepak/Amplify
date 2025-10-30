@@ -25,7 +25,8 @@ app.use(express.json());
 //mongoose.connect() takes 2 arguments 1.db 
 //2 connection options
 
-mongoose.connect("mongodb+srv://CSDEEPAK:"+process.env.MONGO_PASSWORD+"@amplify.uvhj4.mongodb.net/?retryWrites=true&w=majority&appName=Amplify")
+
+mongoose.connect("mongodb+srv://CSDEEPAK:Amplify123@amplify.uvhj4.mongodb.net/?appName=Amplify")
     .then(() => {
         console.log("---Connected to Mongo Successfully---");
     })
